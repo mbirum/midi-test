@@ -4,7 +4,7 @@ from amidiw import MIDIInterface
 # set midi cc code
 CC_EXPRESSION = 11
 
-INTERVAL = 0.0005
+INTERVAL = 0.0001
 
 # create midi interface
 midi = MIDIInterface()
