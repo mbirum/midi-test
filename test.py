@@ -15,7 +15,7 @@ for i in range(128):
 
 # wipe back left
 for i in range(128):
-    let ii = 127 - i
+    ii = 127 - i
     print(ii)
     midi.send_cc_message(CC_EXPRESSION, 1, ii)
     time.sleep(0.001)
