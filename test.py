@@ -8,14 +8,14 @@ CC_EXPRESSION = 11
 midi = MIDIInterface()
 
 # wipe right
-for i in range(128):
+for i in range(15):
     print(i)
     midi.send_cc_message(CC_EXPRESSION, 1, i)
     time.sleep(0.001)
 
 # wipe back left
-for i in range(128):
-    ii = 127 - i
+for i in range(15):
+    ii = 14 - i
     print(ii)
     midi.send_cc_message(CC_EXPRESSION, 1, ii)
     time.sleep(0.001)
