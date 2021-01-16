@@ -4,6 +4,8 @@ from amidiw import MIDIInterface
 # set midi cc code
 CC_EXPRESSION = 11
 
+INTERVAL = 0.0001
+
 # create midi interface
 midi = MIDIInterface()
 
@@ -11,11 +13,11 @@ midi = MIDIInterface()
 for i in range(15):
     print(i)
     midi.send_cc_message(CC_EXPRESSION, 1, i)
-    time.sleep(0.001)
+    #time.sleep(INTERVAL)
 
 # wipe back left
 for i in range(15):
     ii = 14 - i
     print(ii)
     midi.send_cc_message(CC_EXPRESSION, 1, ii)
-    time.sleep(0.001)
+    #time.sleep(INTERVAL)
