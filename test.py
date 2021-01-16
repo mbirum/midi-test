@@ -13,11 +13,11 @@ midi = MIDIInterface()
 for i in range(128):
     print(i)
     midi.send_cc_message(CC_EXPRESSION, 1, i)
-    time.sleep(INTERVAL)
+    #time.sleep(INTERVAL)
 
 # wipe back left
 for i in range(128):
     ii = 127 - i
     print(ii)
     midi.send_cc_message(CC_EXPRESSION, 1, ii)
-    time.sleep(INTERVAL)
+    #time.sleep(INTERVAL)
