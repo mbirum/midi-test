@@ -20,11 +20,13 @@ midiout.open_port(0)
 for i in range(15):
     print(i)
     midiout.send_message([0x1, 11, i])
+    time.sleep(INTERVAL)
 
 for i in range(15):
     ii = 14 - i
     print(ii)
     midiout.send_message([0x1, 11, i])
+    time.sleep(INTERVAL)
 
 # wipe right
 #for i in range(15):
