@@ -4,7 +4,7 @@ from rtmidiw import MIDIInterface
 CC_EXPRESSION = 11
 CHANNEL = 0
 
-INTERVAL = 0.1
+INTERVAL = 0.05
 
 midi = MIDIInterface()
 
