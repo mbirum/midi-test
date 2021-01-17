@@ -3,7 +3,7 @@ import rtmidi
 from amidiw import MIDIInterface
 
 # set midi cc code
-CC_EXPRESSION = 11
+CC_EXPRESSION = 0xB0
 
 INTERVAL = 0.1
 
@@ -27,13 +27,13 @@ midiout.open_port(port_index)
 
 for i in range(60):
     print(i)
-    midiout.send_message([0x90, 11, i])
+    midiout.send_message([CC_EXPRESSION, 1, i])
     time.sleep(INTERVAL)
 
 for i in range(60):
     ii = 59 - i
     print(ii)
-    midiout.send_message([0x90, 11, ii])
+    midiout.send_message([CC_EXPRESSION, 1, ii])
     time.sleep(INTERVAL)
 
 # wipe right
