@@ -3,7 +3,7 @@ import rtmidi
 from amidiw import MIDIInterface
 
 # set midi cc code
-CC_EXPRESSION = 0xB0
+CC_EXPRESSION = 0x0B
 
 INTERVAL = 0.1
 
