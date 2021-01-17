@@ -5,7 +5,7 @@ from amidiw import MIDIInterface
 # set midi cc code
 CC_EXPRESSION = 11
 
-INTERVAL = 0.01
+INTERVAL = 0.1
 
 # create midi interface
 #midi = MIDIInterface()
@@ -17,13 +17,13 @@ print(available_ports)
 
 midiout.open_port(0)
 
-for i in range(15):
+for i in range(60):
     print(i)
     midiout.send_message([0x1, 11, i])
     time.sleep(INTERVAL)
 
-for i in range(15):
-    ii = 14 - i
+for i in range(60):
+    ii = 59 - i
     print(ii)
     midiout.send_message([0x1, 11, i])
     time.sleep(INTERVAL)
