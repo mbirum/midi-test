@@ -15,6 +15,10 @@ available_ports = midiout.get_ports()
 
 print(available_ports)
 
+midiout.open_port(0)
+
+midiout.send_message([0x1, 11, 112])
+
 # wipe right
 #for i in range(15):
     #print(i)
