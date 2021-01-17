@@ -12,10 +12,18 @@ INTERVAL = 0.1
 
 midiout = rtmidi.MidiOut()
 available_ports = midiout.get_ports()
+port_index = -1
 
-print(available_ports)
 
-midiout.open_port(2)
+for i in range(len(available_ports)):
+    if "rtpmidi" in available_ports[i]:
+        print(available_ports[i])
+        port_index = i
+
+if port_index == -1:
+    raise Exception('rtpmidi port not available')
+
+midiout.open_port(port_index)
 
 for i in range(60):
     print(i)
