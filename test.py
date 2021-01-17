@@ -19,13 +19,13 @@ midiout.open_port(2)
 
 for i in range(60):
     print(i)
-    midiout.send_message([0x1, 11, i])
+    midiout.send_message([0x90, 11, i])
     time.sleep(INTERVAL)
 
 for i in range(60):
     ii = 59 - i
     print(ii)
-    midiout.send_message([0x1, 11, i])
+    midiout.send_message([0x90, 11, ii])
     time.sleep(INTERVAL)
 
 # wipe right
