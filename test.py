@@ -1,14 +1,10 @@
 import time
 import rtmidi
-from amidiw import MIDIInterface
 
-# set midi cc code
-CC_EXPRESSION = 0x0B
+CHANNEL = 0xB0
+CC_EXPRESSION = 11
 
 INTERVAL = 0.1
-
-# create midi interface
-#midi = MIDIInterface()
 
 midiout = rtmidi.MidiOut()
 available_ports = midiout.get_ports()
@@ -27,22 +23,11 @@ midiout.open_port(port_index)
 
 for i in range(60):
     print(i)
-    midiout.send_message([CC_EXPRESSION, 1, i])
+    midiout.send_message([CHANNEL, CC_EXPRESSION, i])
     time.sleep(INTERVAL)
 
 for i in range(60):
     ii = 59 - i
     print(ii)
-    midiout.send_message([CC_EXPRESSION, 1, ii])
+    midiout.send_message([CHANNEL, CC_EXPRESSION, ii])
     time.sleep(INTERVAL)
-
-# wipe right
-#for i in range(15):
-    #print(i)
-    #midi.send_cc_message(CC_EXPRESSION, 1, i)
-
-# wipe back left
-#for i in range(15):
-    #ii = 14 - i
-    #print(ii)
-    #midi.send_cc_message(CC_EXPRESSION, 1, ii)
