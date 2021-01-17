@@ -15,7 +15,7 @@ available_ports = midiout.get_ports()
 
 print(available_ports)
 
-midiout.open_port(0)
+midiout.open_port(2)
 
 for i in range(60):
     print(i)
